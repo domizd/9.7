@@ -1,9 +1,9 @@
-var newGameBtn = document.getElementById('js-newGameButton');
+let newGameBtn = document.getElementById('js-newGameButton');
 
 
 newGameBtn.addEventListener('click', newGame);
 
-var pickRock = document.getElementById('js-playerPick_rock'),
+let pickRock = document.getElementById('js-playerPick_rock'),
     pickPaper = document.getElementById('js-playerPick_paper'),
     pickScissors = document.getElementById('js-playerPick_scissors');
 
@@ -85,7 +85,7 @@ function playerPick(playerPick) {
 function checkRoundWinner(playerPick, computerPick){
     playerResultElem.innerHTML = computerResultElem.innerHTML = '';
 
-    var winnerIs = 'player';
+    let winnerIs = 'player';
 
         if (playerPick == computerPick){
             winnerIs = 'noone';
@@ -116,12 +116,10 @@ function setGamePoints() {
 }
 function endGame(){
     setGameElements();
-    var winner = function(){
-        if(player.score == 10){
-            return alert(`YOU ARE A WINNER`);
-        }
-        else{
-            return alert('the winner is Computer');
-        }
+    if(player.score == 10){
+        alert('YOU ARE A WINNER');
+    }
+    else{
+        alert('the winner is Computer');
     }
 }
