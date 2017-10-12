@@ -62,9 +62,6 @@ function newGame() {
   }
 
 }
-function playerPick(playerPick) {
-    console.log(playerPick);
-}
 function getComputerPick() {
     var possiblePicks = ['rock', 'paper', 'scissors'];
     return possiblePicks[Math.floor(Math.random()*3)];
@@ -118,8 +115,14 @@ function endGame(){
     setGameElements();
     if(player.score == 10){
         alert('YOU ARE A WINNER');
+            player.score = computer.score = 0;
+            gameState = 'ended';
+            setGameElements();
     }
     else{
         alert('the winner is Computer');
+            player.score = computer.score = 0;
+            gameState = 'ended';
+            setGameElements();
     }
 }
